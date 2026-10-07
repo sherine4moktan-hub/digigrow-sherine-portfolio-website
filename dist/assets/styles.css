@@ -75,9 +75,8 @@ p { color: var(--ink-soft); }
 /* Header */
 .site-header { position: sticky; z-index: 100; top: 0; background: rgba(251, 250, 246, .9); border-bottom: 1px solid rgba(191, 208, 202, .7); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
 .nav-shell { display: flex; min-height: 78px; align-items: center; gap: 28px; }
-.wordmark { display: inline-flex; align-items: center; gap: 10px; flex: none; color: var(--ink); font-family: var(--serif); font-size: 1.13rem; font-weight: 600; letter-spacing: -.02em; text-decoration: none; }
-.wordmark em { color: var(--teal); font-style: normal; }
-.wordmark-mark { display: grid; width: 36px; height: 36px; place-items: center; color: white; background: var(--navy); border-radius: 50% 50% 50% 16%; font-family: var(--sans); font-size: .63rem; font-style: normal; font-weight: 800; letter-spacing: .08em; }
+.brand-logo-link { display: inline-flex; flex: none; align-items: center; text-decoration: none; }
+.brand-logo { width: 210px; height: auto; }
 .desktop-nav { display: flex; align-items: center; justify-content: center; gap: clamp(16px, 2.2vw, 31px); margin-left: auto; }
 .desktop-nav a { position: relative; padding: 27px 0 25px; color: #31474b; font-size: .84rem; font-weight: 650; text-decoration: none; }
 .desktop-nav a::after { position: absolute; right: 0; bottom: 18px; left: 0; height: 2px; background: var(--teal); content: ""; transform: scaleX(0); transition: transform .2s; }
@@ -297,8 +296,8 @@ p { color: var(--ink-soft); }
 /* Footer */
 .site-footer { color: white; background: #0c282d; }
 .footer-grid { display: grid; grid-template-columns: 1.45fr .65fr .9fr 1.1fr; gap: 45px; padding: 76px 0 62px; }
-.wordmark-light { color: white; }
-.wordmark-light .wordmark-mark { color: var(--navy); background: #9fdacc; }
+.footer-logo-link { width: fit-content; padding: 9px 13px; background: white; border-radius: 12px; }
+.footer-logo { width: 225px; }
 .footer-brand p { max-width: 330px; margin-top: 21px; color: #acc1c2; font-size: .86rem; }
 .site-footer h2 { margin-bottom: 18px; color: white; font-family: var(--sans); font-size: .72rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
 .site-footer ul { margin: 0; padding: 0; list-style: none; }
@@ -362,7 +361,7 @@ p { color: var(--ink-soft); }
   body { font-size: 16px; }
   .container, .narrow { width: min(calc(100% - 32px), var(--container)); }
   .section { padding: 70px 0; }
-  .wordmark-mark { width: 34px; height: 34px; }
+  .brand-logo { width: 176px; }
   .hero { padding-top: 57px; }
   .hero-grid { gap: 42px; }
   .hero-visual { min-height: 400px; }
@@ -406,7 +405,7 @@ p { color: var(--ink-soft); }
 
 @media (max-width: 390px) {
   h1 { font-size: 2.45rem; }
-  .wordmark { font-size: 1.02rem; }
+  .brand-logo { width: 162px; }
   .visual-note { max-width: 170px; font-size: .68rem; }
   .board-id span { display: none; }
   .challenge-list li { grid-template-columns: 40px 1fr; }

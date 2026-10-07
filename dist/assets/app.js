@@ -24,9 +24,8 @@
   if (header) {
     header.innerHTML = `
       <div class="nav-shell container">
-        <a class="wordmark" href="/" aria-label="Digigrow Sherine, home">
-          <span class="wordmark-mark" aria-hidden="true">DS</span>
-          <span>Digigrow <em>Sherine</em></span>
+        <a class="brand-logo-link" href="/" aria-label="Digigrow Sherine, home">
+          <img class="brand-logo" src="/assets/digigrow-sherine-logo-final.png" width="1545" height="432" alt="Digigrow Sherine">
         </a>
         <nav class="desktop-nav" aria-label="Primary navigation">
           ${nav.map(([id, href, label]) => `<a href="${href}"${id === page || (page === "article" && id === "blog") ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
@@ -78,7 +77,7 @@
     footer.innerHTML = `
       <div class="container footer-grid">
         <div class="footer-brand">
-          <a class="wordmark wordmark-light" href="/"><span class="wordmark-mark">DS</span><span>Digigrow <em>Sherine</em></span></a>
+          <a class="brand-logo-link footer-logo-link" href="/" aria-label="Digigrow Sherine, home"><img class="brand-logo footer-logo" src="/assets/digigrow-sherine-logo-final.png" width="1545" height="432" alt="Digigrow Sherine"></a>
           <p>Practical AI-powered digital marketing for small and medium businesses ready to grow with greater clarity.</p>
         </div>
         <div><h2>Explore</h2><ul>${nav.slice(1).map(([, href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}</ul></div>
