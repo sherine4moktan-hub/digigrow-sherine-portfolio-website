@@ -98,6 +98,9 @@ p { color: var(--ink-soft); }
 .hero-support { display: flex; max-width: 540px; align-items: flex-start; gap: 10px; margin: 20px 0 0; color: var(--ink-soft); font-size: .88rem; }
 .hero-support svg { flex: none; margin-top: 4px; color: var(--teal); }
 .hero-visual { position: relative; min-height: 530px; }
+.hero-photo-frame { min-height: 0; margin: 0; isolation: isolate; }
+.hero-photo-frame::before { position: absolute; z-index: -1; inset: -18px 18px 18px -18px; background: var(--teal-pale); border: 1px solid rgba(15, 121, 111, .16); border-radius: 230px 230px 38px 38px; content: ""; transform: rotate(-2deg); }
+.hero-photo-frame img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 18%; border-radius: 220px 220px 32px 32px; box-shadow: var(--shadow); }
 .visual-orbit { position: absolute; inset: 4% 2% 1% 3%; border: 1px solid rgba(15, 121, 111, .2); border-radius: 50%; transform: rotate(-9deg); }
 .visual-orbit::before, .visual-orbit::after { position: absolute; width: 12px; height: 12px; background: var(--coral); border: 5px solid var(--cream); border-radius: 50%; box-shadow: 0 0 0 1px rgba(223, 118, 93, .35); content: ""; }
 .visual-orbit::before { top: 15%; left: 9%; }
@@ -154,6 +157,8 @@ p { color: var(--ink-soft); }
 .process-step h3 { font-family: var(--serif); font-weight: 500; }
 .process-step p { margin: 0; font-size: .9rem; }
 .about-preview { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: clamp(45px, 8vw, 100px); }
+.portrait-photo { position: relative; margin: 0; overflow: hidden; border-radius: 180px 180px 24px 24px; box-shadow: var(--shadow-small); }
+.portrait-photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 18%; }
 .portrait-placeholder { position: relative; min-height: 510px; overflow: hidden; background: var(--teal-pale); border-radius: 180px 180px 24px 24px; }
 .portrait-placeholder::before { position: absolute; inset: 14% 16%; border: 1px solid rgba(15, 121, 111, .35); border-radius: 50%; content: ""; }
 .portrait-monogram { position: absolute; inset: 24% 20%; display: grid; place-items: center; color: var(--navy); background: rgba(255,255,255,.55); border: 1px solid rgba(255,255,255,.8); border-radius: 50%; font-family: var(--serif); font-size: clamp(3.5rem, 8vw, 6rem); letter-spacing: -.08em; }
@@ -205,6 +210,9 @@ p { color: var(--ink-soft); }
 .page-hero::after { position: absolute; top: -210px; right: -120px; width: 520px; height: 520px; border: 1px solid rgba(15, 121, 111, .18); border-radius: 50%; content: ""; }
 .page-hero h1 { max-width: 920px; }
 .page-hero .lead { margin-bottom: 30px; }
+.about-page-hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .65fr); align-items: center; gap: clamp(48px, 7vw, 90px); }
+.about-page-photo { position: relative; z-index: 1; width: min(100%, 430px); margin: 0; justify-self: end; overflow: hidden; border: 7px solid rgba(255,255,255,.72); border-radius: 170px 170px 24px 24px; box-shadow: var(--shadow); }
+.about-page-photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 16%; }
 .breadcrumbs { display: flex; gap: 9px; align-items: center; margin-bottom: 35px; color: #597074; font-size: .78rem; }
 .breadcrumbs a { color: var(--teal-dark); }
 .about-story-grid { display: grid; grid-template-columns: .8fr 1.2fr; align-items: start; gap: clamp(50px, 8vw, 105px); }
@@ -339,6 +347,9 @@ p { color: var(--ink-soft); }
   .hero-grid, .challenge-grid, .about-preview, .about-story-grid, .services-intro, .contact-grid { grid-template-columns: 1fr; }
   .hero-copy { position: relative; z-index: 1; }
   .hero-visual { width: min(100%, 570px); min-height: 510px; margin-inline: auto; }
+  .hero-photo-frame { min-height: 0; }
+  .about-page-hero-grid { grid-template-columns: 1fr; }
+  .about-page-photo { width: min(100%, 470px); margin-top: 20px; justify-self: center; }
   .challenge-intro, .contact-explainer { position: static; }
   .section-heading.split { grid-template-columns: 1fr; gap: 8px; }
   .principles-grid { grid-template-columns: repeat(2, 1fr); }
@@ -365,6 +376,7 @@ p { color: var(--ink-soft); }
   .hero { padding-top: 57px; }
   .hero-grid { gap: 42px; }
   .hero-visual { min-height: 400px; }
+  .hero-photo-frame { min-height: 0; width: min(calc(100% - 14px), 470px); }
   .strategy-board { inset: 4% 0 4% 0; padding: 20px; border-radius: 22px; }
   .board-top { margin-bottom: 24px; }
   .board-chip { display: none; }
