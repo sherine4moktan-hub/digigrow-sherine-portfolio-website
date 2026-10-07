@@ -78,11 +78,12 @@
       <div class="container footer-grid">
         <div class="footer-brand">
           <a class="brand-logo-link footer-logo-link" href="/" aria-label="Digigrow Sherine, home"><img class="brand-logo footer-logo" src="/assets/digigrow-sherine-logo-georgia-v2.png" width="2172" height="724" alt="Digigrow Sherine"></a>
-          <p>Practical AI-powered digital marketing for small and medium businesses ready to grow with greater clarity.</p>
+          <p><strong>Sherine Moktan</strong><br>AI Marketing Expert</p>
+          <p>Helping small and medium businesses grow online with AI-Powered Digital Marketing.</p>
         </div>
-        <div><h2>Explore</h2><ul>${nav.slice(1).map(([, href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}</ul></div>
-        <div><h2>Services</h2><ul>${data.services.slice(0, 4).map((service) => `<li><a href="/services#${service.id}">${service.title.replace(" & AI-Assisted Creation", "")}</a></li>`).join("")}</ul></div>
-        <div class="footer-action"><span class="eyebrow eyebrow-light">A clearer way forward</span><h2>Let’s talk about your next marketing step.</h2><a class="text-link text-link-light" href="${bookingHref}">Book a Free Consultation Call ${icon("arrow", 18)}</a></div>
+        <div><h2>Explore</h2><ul>${nav.map(([, href, label]) => `<li><a href="${href}">${label}</a></li>`).join("")}</ul></div>
+        <div><h2>Services</h2><ul>${data.services.slice(0, 4).map((service) => `<li><a href="/services#${service.id}">${service.title}</a></li>`).join("")}</ul></div>
+        <div class="footer-action"><span class="eyebrow eyebrow-light">Ready to grow?</span><h2>Let’s talk about your business.</h2><a class="text-link text-link-light" href="${bookingHref}">Book a Free Consultation Call ${icon("arrow", 18)}</a></div>
       </div>
       <div class="container footer-base"><p>© ${year} Digigrow Sherine. All rights reserved.</p><p>AI Marketing Expert · Digital Marketing for Small Businesses</p></div>`;
   }
@@ -170,7 +171,7 @@
         const response = await fetch(data.formEndpoint, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(payload) });
         if (!response.ok) throw new Error("Submission failed");
         form.reset();
-        showStatus("Thank you. Your consultation request has been sent. Sherine will review it and follow up using the email you provided.", "success");
+        showStatus("Thank you for your consultation request. I’ll contact you to arrange a suitable time.", "success");
       } catch {
         showStatus("Your request could not be sent. Please check your connection and try again later.", "error");
       } finally {

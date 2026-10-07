@@ -4,7 +4,7 @@ window.DIGIGROW = {
     name: "Sherine Moktan",
     siteName: "Digigrow Sherine",
     role: "AI Marketing Expert",
-    positioning: "AI-Powered Digital Marketing for small and medium businesses"
+    positioning: "Helping small and medium businesses grow online with AI-Powered Digital Marketing"
   },
   bookingUrl: "",
   formEndpoint: "",
@@ -18,49 +18,41 @@ window.DIGIGROW = {
       id: "ai-marketing-strategy",
       number: "01",
       icon: "spark",
-      title: "AI Marketing Strategy",
-      summary: "A practical plan that connects your business goals, marketing channels, and suitable AI tools.",
-      benefit: "Know what to prioritize, what to automate, and where human judgment matters most."
+      title: "AI-Powered Marketing Strategy",
+      summary: "A clear plan that connects your business goals with the right channels, content, and AI tools.",
+      benefit: "Clear direction and more focused marketing effort."
     },
     {
       id: "social-media-marketing",
       number: "02",
       icon: "conversation",
-      title: "Social Media Marketing",
-      summary: "Content planning and campaign strategies designed to reach and engage the people most relevant to your business.",
-      benefit: "Show up more consistently with a clearer message and purpose."
+      title: "Content and Social Media Marketing",
+      summary: "Helpful, customer-focused content supported by efficient planning and careful human review.",
+      benefit: "A more consistent presence and clearer communication."
     },
     {
       id: "content-marketing",
       number: "03",
       icon: "pen",
-      title: "Content Marketing & AI-Assisted Creation",
-      summary: "Useful, brand-aligned content supported by AI tools and shaped through careful human review.",
-      benefit: "Create stronger content with a more manageable workflow."
+      title: "Search and Online Visibility",
+      summary: "Useful content, clear website messaging, and search-focused improvements that help customers discover your business.",
+      benefit: "More opportunities for relevant customers to find your business."
     },
     {
       id: "search-engine-optimization",
       number: "04",
       icon: "search",
-      title: "Search Engine Optimization",
-      summary: "Content and website improvements that support discoverability when potential customers search online.",
-      benefit: "Build a clearer, more useful search presence over time."
+      title: "Lead Generation and Campaign Planning",
+      summary: "Focused campaigns and website journeys that guide potential customers from interest toward inquiry.",
+      benefit: "A clearer path from attention to action."
     },
     {
       id: "paid-advertising",
       number: "05",
       icon: "target",
-      title: "Paid Advertising & Lead Generation",
-      summary: "Campaign planning and optimization focused on relevant audiences and qualified inquiries.",
-      benefit: "Use your advertising budget with clearer targeting and intent."
-    },
-    {
-      id: "email-automation",
-      number: "06",
-      icon: "mail",
-      title: "Email Marketing & Automation",
-      summary: "Email journeys and practical workflows that support lead follow-up and customer relationships.",
-      benefit: "Keep valuable conversations moving without adding repetitive work."
+      title: "Email Marketing and Automation",
+      summary: "Relevant email messages and practical workflows that keep conversations moving with leads and customers.",
+      benefit: "More consistent follow-up and less repetitive work."
     }
   ],
   posts: [
