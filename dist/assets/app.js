@@ -25,7 +25,7 @@
     header.innerHTML = `
       <div class="nav-shell container">
         <a class="brand-logo-link" href="/" aria-label="Digigrow Sherine, home">
-          <img class="brand-logo" src="/assets/digigrow-sherine-logo-georgia-v2.png" width="2172" height="724" alt="Digigrow Sherine">
+          <img class="brand-logo" src="/assets/digigrow-sherine-logo-classic-v3.png" width="2172" height="724" alt="Digigrow Sherine">
         </a>
         <nav class="desktop-nav" aria-label="Primary navigation">
           ${nav.map(([id, href, label]) => `<a href="${href}"${id === page || (page === "article" && id === "blog") ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
@@ -77,7 +77,7 @@
     footer.innerHTML = `
       <div class="container footer-grid">
         <div class="footer-brand">
-          <a class="brand-logo-link footer-logo-link" href="/" aria-label="Digigrow Sherine, home"><img class="brand-logo footer-logo" src="/assets/digigrow-sherine-logo-georgia-v2.png" width="2172" height="724" alt="Digigrow Sherine"></a>
+          <a class="brand-logo-link footer-logo-link" href="/" aria-label="Digigrow Sherine, home"><img class="brand-logo footer-logo" src="/assets/digigrow-sherine-logo-classic-v3.png" width="2172" height="724" alt="Digigrow Sherine"></a>
           <p><strong>Sherine Moktan</strong><br>AI Marketing Expert</p>
           <p>Helping small and medium businesses grow online with AI-Powered Digital Marketing.</p>
         </div>
@@ -112,11 +112,19 @@
         if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); }
       });
     }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
-    reveals.forEach((element) => observer.observe(element));
+    reveals.forEach((element, index) => {
+      element.style.setProperty("--reveal-delay", `${Math.min(index % 5, 4) * 65}ms`);
+      observer.observe(element);
+    });
   }
 
   const blogGrid = document.querySelector("[data-blog-grid]");
   if (blogGrid) {
+    const postImages = {
+      "how-ai-can-help-small-business-marketing": "/assets/blog-ai-marketing.jpg",
+      "build-a-digital-marketing-plan": "/assets/blog-marketing-plan.jpg",
+      "turn-website-visitors-into-qualified-leads": "/assets/blog-qualified-leads.jpg"
+    };
     const search = document.querySelector("[data-blog-search]");
     const filters = [...document.querySelectorAll("[data-category]")];
     const empty = document.querySelector("[data-blog-empty]");
@@ -126,7 +134,7 @@
       const matches = data.posts.filter((post) => (category === "All" || post.category === category) && `${post.title} ${post.excerpt} ${post.category}`.toLowerCase().includes(query));
       blogGrid.innerHTML = matches.map((post, index) => `
         <article class="blog-card" style="--card-index:${index}">
-          <a class="blog-card-art art-${index + 1}" href="/blog/${post.slug}" aria-label="Read ${post.title}"><span>${String(index + 1).padStart(2, "0")}</span><div class="art-lines"></div></a>
+          <a class="blog-card-art" href="/blog/${post.slug}" aria-label="Read ${post.title}"><img src="${postImages[post.slug]}" alt="" loading="lazy"><span class="blog-card-number">${String(index + 1).padStart(2, "0")}</span></a>
           <div class="blog-card-content"><div class="blog-meta"><span>${post.category}</span><span>${post.readingTime}</span></div>
           <h2><a href="/blog/${post.slug}">${post.title}</a></h2><p>${post.excerpt}</p>
           <a class="text-link" href="/blog/${post.slug}">Read article ${icon("arrow", 17)}</a></div>
@@ -172,7 +180,7 @@
         const result = await response.json().catch(() => ({}));
         if (!response.ok || result.success === false || result.success === "false") throw new Error(result.message || "Submission failed");
         form.reset();
-        showStatus("Thank you for your consultation request. I’ll contact you to arrange a suitable time.", "success");
+        showStatus("Successfully submitted. Thank you for your consultation request. I’ll contact you to arrange a suitable time.", "success");
       } catch {
         showStatus("Your request could not be sent. Please check your connection and try again. If the problem continues, please return later.", "error");
       } finally {
