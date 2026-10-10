@@ -25,7 +25,7 @@
     header.innerHTML = `
       <div class="nav-shell container">
         <a class="brand-logo-link" href="/" aria-label="Digigrow Sherine, home">
-          <img class="brand-logo" src="/assets/digigrow-sherine-logo-classic-v3.png" width="2172" height="724" alt="Digigrow Sherine">
+          <img class="brand-logo" src="/assets/digigrow-sherine-logo-classic-v6-trimmed.png" width="2146" height="601" alt="Digigrow Sherine">
         </a>
         <nav class="desktop-nav" aria-label="Primary navigation">
           ${nav.map(([id, href, label]) => `<a href="${href}"${id === page || (page === "article" && id === "blog") ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
@@ -68,6 +68,18 @@
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       link.setAttribute("aria-label", `${link.textContent.trim()} (opens scheduling page in a new tab)`);
+    } else if (location.pathname.replace(/\/$/, "") === "/contact") {
+      link.addEventListener("click", (event) => {
+        const formTarget = document.getElementById("consultation-form");
+        if (!formTarget) return;
+        event.preventDefault();
+        history.replaceState(null, "", "#consultation-form");
+        const formTop = formTarget.getBoundingClientRect().top + window.scrollY - 94;
+        const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+        document.documentElement.style.scrollBehavior = "auto";
+        window.scrollTo({ top: formTop, behavior: "auto" });
+        requestAnimationFrame(() => { document.documentElement.style.scrollBehavior = previousScrollBehavior; });
+      });
     }
   });
 
@@ -77,7 +89,7 @@
     footer.innerHTML = `
       <div class="container footer-grid">
         <div class="footer-brand">
-          <a class="brand-logo-link footer-logo-link" href="/" aria-label="Digigrow Sherine, home"><img class="brand-logo footer-logo" src="/assets/digigrow-sherine-logo-classic-v3.png" width="2172" height="724" alt="Digigrow Sherine"></a>
+          <a class="brand-logo-link footer-logo-link" href="/" aria-label="Digigrow Sherine, home"><img class="brand-logo footer-logo" src="/assets/digigrow-sherine-logo-classic-v6-trimmed.png" width="2146" height="601" alt="Digigrow Sherine"></a>
           <p><strong>Sherine Moktan</strong><br>AI Marketing Expert</p>
           <p>Helping small and medium businesses grow online with AI-Powered Digital Marketing.</p>
         </div>
@@ -121,9 +133,9 @@
   const blogGrid = document.querySelector("[data-blog-grid]");
   if (blogGrid) {
     const postImages = {
-      "how-ai-can-help-small-business-marketing": "/assets/blog-ai-marketing.jpg",
-      "build-a-digital-marketing-plan": "/assets/blog-marketing-plan.jpg",
-      "turn-website-visitors-into-qualified-leads": "/assets/blog-qualified-leads.jpg"
+      "how-ai-can-help-small-business-marketing": "/assets/blog-ai-marketing-nepali-v2.jpg",
+      "build-a-digital-marketing-plan": "/assets/blog-marketing-plan-nepali-v2.jpg",
+      "turn-website-visitors-into-qualified-leads": "/assets/blog-qualified-leads-nepali-v2.jpg"
     };
     const search = document.querySelector("[data-blog-search]");
     const filters = [...document.querySelectorAll("[data-category]")];
