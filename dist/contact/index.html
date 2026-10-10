@@ -15,8 +15,12 @@
 
     <section class="section section-paper" id="consultation-form" aria-labelledby="request-title"><div class="container contact-grid">
       <div class="contact-explainer" data-reveal><span class="eyebrow">What You’ll Get</span><h2 id="request-title">A customized Digital Marketing Plan</h2><p>Your plan will help you understand:</p><ul class="consult-list"><li><span aria-hidden="true">✓</span><span>Where your marketing needs attention.</span></li><li><span aria-hidden="true">✓</span><span>How to reach the right customers.</span></li><li><span aria-hidden="true">✓</span><span>Which AI tools could support your work.</span></li><li><span aria-hidden="true">✓</span><span>What steps you can start implementing immediately.</span></li></ul></div>
-      <div class="form-card" data-reveal><span class="eyebrow">Request Your Free Consultation</span><h2>Tell me a little about your business and what you’d like to achieve.</h2><p class="form-note">Online form delivery is not connected yet. Your entries stay in your browser and will not be sent until a secure form endpoint is configured.</p>
-        <form data-consultation-form novalidate>
+      <div class="form-card" data-reveal><span class="eyebrow">Request Your Free Consultation</span><h2>Tell me a little about your business and what you’d like to achieve.</h2><p class="form-note">Complete the form below and your consultation request will be delivered directly to Sherine by email.</p>
+        <form action="https://formsubmit.co/sherine4moktan@gmail.com" method="POST" data-consultation-form novalidate>
+          <input type="hidden" name="_subject" value="New Free Consultation Request — Digigrow Sherine">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_url" value="https://digigrow-sherine.terranceheaney.chatgpt.site/contact">
+          <div class="form-honey" aria-hidden="true"><label for="company-fax">Leave this field empty</label><input id="company-fax" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
           <div class="field-grid">
             <div class="field"><label for="full-name">Full name <span class="required-mark" aria-hidden="true">*</span></label><input id="full-name" name="fullName" type="text" autocomplete="name" required aria-describedby="required-note"></div>
             <div class="field"><label for="email">Email address <span class="required-mark" aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
@@ -26,7 +30,7 @@
             <div class="field field-full"><label for="message">Anything else you’d like me to know? <span>(optional)</span></label><textarea id="message" name="message" placeholder="Briefly share your current challenge, priorities, or questions."></textarea></div>
           </div>
           <p class="small-note" id="required-note"><span class="required-mark">*</span> Required fields</p>
-          <div class="form-actions"><button class="button" type="submit"><span>Request My Free Consultation</span></button><p class="small-note">Submitting does not confirm a booking. Sherine will need a connected form service to receive your request.</p></div>
+          <div class="form-actions"><button class="button" type="submit"><span>Request My Free Consultation</span></button><p class="small-note">Submitting sends a consultation request; it does not confirm a meeting time.</p></div>
           <div class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1" hidden></div>
         </form>
       </div>

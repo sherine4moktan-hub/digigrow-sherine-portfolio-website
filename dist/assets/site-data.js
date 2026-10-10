@@ -7,9 +7,9 @@ window.DIGIGROW = {
     positioning: "Helping small and medium businesses grow online with AI-Powered Digital Marketing"
   },
   bookingUrl: "",
-  formEndpoint: "",
+  formEndpoint: "https://formsubmit.co/ajax/sherine4moktan@gmail.com",
   contact: {
-    email: "",
+    email: "sherine4moktan@gmail.com",
     phone: ""
   },
   socialLinks: [],

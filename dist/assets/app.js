@@ -169,11 +169,12 @@
       try {
         const payload = Object.fromEntries(new FormData(form).entries());
         const response = await fetch(data.formEndpoint, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(payload) });
-        if (!response.ok) throw new Error("Submission failed");
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || result.success === false || result.success === "false") throw new Error(result.message || "Submission failed");
         form.reset();
         showStatus("Thank you for your consultation request. I’ll contact you to arrange a suitable time.", "success");
       } catch {
-        showStatus("Your request could not be sent. Please check your connection and try again later.", "error");
+        showStatus("Your request could not be sent. Please check your connection and try again. If the problem continues, please return later.", "error");
       } finally {
         submit.disabled = false;
         submit.classList.remove("is-loading");
