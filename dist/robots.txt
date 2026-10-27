@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://digigrow-sherine.terranceheaney.chatgpt.site/sitemap.xml
+Sitemap: https://digigrowsherine.com/sitemap.xml
