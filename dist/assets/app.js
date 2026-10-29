@@ -25,7 +25,7 @@
     header.innerHTML = `
       <div class="nav-shell container">
         <a class="brand-logo-link" href="/" aria-label="Digigrow Sherine, home">
-          <img class="brand-logo" src="/assets/digigrow-sherine-logo-elegant-v8.png" width="664" height="229" alt="Digigrow Sherine">
+          <img class="brand-logo" src="/assets/digigrow-sherine-logo-restored-v9.png" width="1911" height="553" alt="Digigrow Sherine">
         </a>
         <nav class="desktop-nav" aria-label="Primary navigation">
           ${nav.map(([id, href, label]) => `<a href="${href}"${id === page || (page === "article" && id === "blog") ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
@@ -89,7 +89,7 @@
     footer.innerHTML = `
       <div class="container footer-grid">
         <div class="footer-brand">
-          <a class="brand-logo-link footer-logo-link" href="/" aria-label="Digigrow Sherine, home"><img class="brand-logo footer-logo" src="/assets/digigrow-sherine-logo-elegant-v8.png" width="664" height="229" alt="Digigrow Sherine"></a>
+          <a class="brand-logo-link footer-logo-link" href="/" aria-label="Digigrow Sherine, home"><img class="brand-logo footer-logo" src="/assets/digigrow-sherine-logo-restored-v9.png" width="1911" height="553" alt="Digigrow Sherine"></a>
           <p><strong>Sherine Moktan</strong><br>AI Marketing Expert</p>
           <p>Helping small and medium businesses grow online with AI-Powered Digital Marketing.</p>
         </div>
