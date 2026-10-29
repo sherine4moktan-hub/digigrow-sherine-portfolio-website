@@ -59,18 +59,24 @@ $graphics.DrawLine($accentPen, 249, 160, 244, 177)
 
 $leaf = New-Object System.Drawing.Drawing2D.GraphicsPath
 $leaf.StartFigure()
-$leaf.AddBezier(229, 138, 225, 102, 257, 72, 309, 57)
-$leaf.AddBezier(309, 57, 314, 97, 289, 127, 229, 138)
+$leaf.AddBezier(229, 148, 225, 112, 257, 82, 309, 67)
+$leaf.AddBezier(309, 67, 314, 107, 289, 137, 229, 148)
 $leaf.CloseFigure()
 $graphics.DrawPath($accentPen, $leaf)
-$graphics.DrawBezier($accentPen, 234, 132, 255, 108, 282, 82, 304, 63)
+$graphics.DrawBezier($accentPen, 234, 142, 255, 118, 282, 92, 304, 73)
 
 # Smaller, lighter editorial wordmark aligned as two calm lines.
 $textX = 340
 $topY = 24
-$graphics.DrawString('Digi', $topFont, $charcoalBrush, [System.Drawing.PointF]::new($textX, $topY), $textFormat)
+$topScaleX = 0.759
+$topState = $graphics.Save()
+$topTransform = New-Object System.Drawing.Drawing2D.Matrix($topScaleX, 0, 0, 1, $textX, 0)
+$graphics.Transform = $topTransform
+$graphics.DrawString('Digi', $topFont, $charcoalBrush, [System.Drawing.PointF]::new(0, $topY), $textFormat)
 $digiWidth = $graphics.MeasureString('Digi', $topFont, 2000, $textFormat).Width
-$graphics.DrawString('Grow', $topFont, $tealBrush, [System.Drawing.PointF]::new($textX + $digiWidth - 5, $topY), $textFormat)
+$graphics.DrawString('Grow', $topFont, $tealBrush, [System.Drawing.PointF]::new($digiWidth - 5, $topY), $textFormat)
+$graphics.Restore($topState)
+$topTransform.Dispose()
 $graphics.DrawString('Sherine', $bottomFont, $charcoalBrush, [System.Drawing.PointF]::new($textX + 2, 179), $textFormat)
 
 # Trim transparent padding while retaining a small safety margin.
