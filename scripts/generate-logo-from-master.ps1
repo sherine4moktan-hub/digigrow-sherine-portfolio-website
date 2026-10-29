@@ -2,7 +2,7 @@ Add-Type -AssemblyName System.Drawing
 
 $projectRoot = Split-Path $PSScriptRoot -Parent
 $masterPath = Join-Path $projectRoot 'brand-assets\digigrow-sherine-master-reference.png'
-$outputPath = Join-Path $projectRoot 'dist\assets\digigrow-sherine-logo-restored-v9.png'
+$outputPath = Join-Path $projectRoot 'dist\assets\digigrow-sherine-logo-bodoni-compact-v10.png'
 
 $master = [System.Drawing.Bitmap]::FromFile($masterPath)
 $canvas = New-Object System.Drawing.Bitmap(2170, 725, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
@@ -36,9 +36,23 @@ $format.FormatFlags = $format.FormatFlags -bor [System.Drawing.StringFormatFlags
 
 $textX = 458
 $topY = 44
-$graphics.DrawString('Digi', $topFont, $charcoalBrush, [System.Drawing.PointF]::new($textX, $topY), $format)
 $digiWidth = $graphics.MeasureString('Digi', $topFont, 2500, $format).Width
-$graphics.DrawString('Grow', $topFont, $tealBrush, [System.Drawing.PointF]::new($textX + $digiWidth - 10, $topY), $format)
+$sherineWidth = $graphics.MeasureString('Sherine', $bottomFont, 2500, $format).Width
+$grWidth = $graphics.MeasureString('Gr', $topFont, 2500, $format).Width
+$oWidth = $graphics.MeasureString('o', $topFont, 2500, $format).Width
+
+# Narrow only the top wordmark so the centre of the "o" sits directly above
+# the final edge of "Sherine". The icon, letter height and lower word stay intact.
+$naturalOCentre = $digiWidth - 10 + $grWidth + ($oWidth / 2)
+$sherineEnd = 3 + $sherineWidth
+$topScaleX = $sherineEnd / $naturalOCentre
+$topState = $graphics.Save()
+$topTransform = New-Object System.Drawing.Drawing2D.Matrix($topScaleX, 0, 0, 1, $textX, 0)
+$graphics.Transform = $topTransform
+$graphics.DrawString('Digi', $topFont, $charcoalBrush, [System.Drawing.PointF]::new(0, $topY), $format)
+$graphics.DrawString('Grow', $topFont, $tealBrush, [System.Drawing.PointF]::new($digiWidth - 10, $topY), $format)
+$graphics.Restore($topState)
+$topTransform.Dispose()
 $graphics.DrawString('Sherine', $bottomFont, $charcoalBrush, [System.Drawing.PointF]::new($textX + 3, 350), $format)
 
 $graphics.Dispose()
