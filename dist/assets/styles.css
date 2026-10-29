@@ -79,7 +79,7 @@ p { color: var(--ink-soft); }
 .site-header { position: sticky; z-index: 100; top: 0; background: rgba(251, 250, 246, .84); border-bottom: 1px solid rgba(191, 208, 202, .62); box-shadow: 0 8px 30px rgba(18,37,43,.035); -webkit-backdrop-filter: blur(18px) saturate(1.2); backdrop-filter: blur(18px) saturate(1.2); }
 .nav-shell { display: flex; min-height: 78px; align-items: center; gap: 28px; }
 .brand-logo-link { display: inline-flex; flex: none; align-items: center; text-decoration: none; }
-.brand-logo { width: 156px; height: auto; }
+.brand-logo { width: 146px; height: auto; }
 .desktop-nav { display: flex; align-items: center; justify-content: center; gap: clamp(16px, 2.2vw, 31px); margin-left: auto; }
 .desktop-nav a { position: relative; padding: 27px 0 25px; color: #31474b; font-size: .84rem; font-weight: 650; text-decoration: none; }
 .desktop-nav a::after { position: absolute; right: 0; bottom: 18px; left: 0; height: 2px; background: var(--teal); content: ""; transform: scaleX(0); transition: transform .2s; }
@@ -352,7 +352,7 @@ body[data-page="home"] .consultation-inner { gap: 42px; padding: clamp(36px, 5vw
 .site-footer { color: #0f3035; background: linear-gradient(135deg, #fbf8f1, #f0e8d9); border-top: 1px solid #d4d7ca; }
 .footer-grid { display: grid; grid-template-columns: 1.45fr .65fr .9fr 1.1fr; gap: 45px; padding: 68px 0 54px; }
 .footer-logo-link { width: fit-content; padding: 0; background: transparent; border: 0; border-radius: 0; }
-.footer-logo { width: 170px; filter: none; }
+.footer-logo { width: 160px; filter: none; }
 .footer-brand p { max-width: 330px; margin-top: 18px; color: #315a56; font-size: .86rem; }
 .site-footer h2 { margin-bottom: 18px; color: #0f3035; font-family: var(--sans); font-size: .72rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
 .site-footer ul { margin: 0; padding: 0; list-style: none; }
@@ -427,7 +427,7 @@ body[data-page="home"] .consultation-inner { gap: 42px; padding: clamp(36px, 5vw
   .section { padding: 70px 0; }
   body[data-page="home"] .section { padding: 52px 0; }
   body[data-page="home"] .home-challenges, body[data-page="home"] .home-faq { padding: 44px 0; }
-  .brand-logo { width: 140px; }
+  .brand-logo { width: 134px; }
   .hero { padding: 38px 0 52px; }
   .hero-grid { gap: 34px; }
   .hero-visual { min-height: 355px; }
@@ -482,7 +482,7 @@ body[data-page="home"] .consultation-inner { gap: 42px; padding: clamp(36px, 5vw
 
 @media (max-width: 390px) {
   h1 { font-size: 2.45rem; }
-  .brand-logo { width: 132px; }
+  .brand-logo { width: 124px; }
   .visual-note { max-width: 170px; font-size: .68rem; }
   .board-id span { display: none; }
   .challenge-list li { grid-template-columns: 40px 1fr; }
